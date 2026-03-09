@@ -40,7 +40,7 @@ Operator weights were derived from scanning the Feynman dataset. Filtering was a
 
 ### Approach 1 — Joint Training
 
-Trained the context encoder, predictor, and target encoder together on 500 sampled data points per equation.
+Trained the context encoder, predictor, and target encoder together on 500 sampled data points per equation (Trained on AI Feynman dataset).
 
 | Component | Epochs | Final Loss |
 |-----------|--------|------------|
@@ -51,7 +51,7 @@ Trained the context encoder, predictor, and target encoder together on 500 sampl
 
 ### Approach 2 — Modular Training
 
-Each component trained independently for better control:
+Each component trained independently for better control (Trained on 50k Synthetic equations):
 
 | Component | Method | Epochs | Result |
 |-----------|--------|--------|--------|
