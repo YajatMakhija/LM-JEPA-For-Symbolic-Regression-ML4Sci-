@@ -82,7 +82,6 @@ Each component trained independently for better control (Trained on 50k Syntheti
 
 ## Targets
 
-- Benchmark on Nguyen, SymSet, Livermore & Feynman datasets with ablation studies
 - Optimize model efficiency
 - Integration with LLMs
 
@@ -93,4 +92,3 @@ Each component trained independently for better control (Trained on 50k Syntheti
 - Udrescu & Tegmark, *AI Feynman* datasetfurther improvements.
 ---
 
-### Final Pipeline
