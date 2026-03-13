@@ -71,8 +71,8 @@ Each component trained independently for better control (Trained on 50k Syntheti
 ├── Specific_Task_2.7.ipynb                             # Approach 1 — joint training
 ├── TargetEncoder_ContextEncoder_Training.ipynb         # Approach 2 — target encoder (MLM)
 ├── decoder.ipynb                                       # Approach 2 — decoder (GRU)
-├── testing.ipynb                                       # End-to-end inference & evaluation
-├── data_scanner.ipynb                                  # Operator frequency analysis
+├── test.ipynb                                          # End-to-end inference & evaluation
+├── scanner.ipynb                                       # Operator frequency analysis
 ├── data_generator.ipynb                                # Synthetic expression generation
 └── data/
     ├── FeynmanEquations.csv
