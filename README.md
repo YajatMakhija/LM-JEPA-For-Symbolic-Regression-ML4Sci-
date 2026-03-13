@@ -59,10 +59,9 @@ Each component trained independently for better control (Trained on 50k Syntheti
 | Context Encoder | Transformer (4 heads, 2 layers, dim=128) | 20 | Cosine sim 0.047, MSE 0.02 |
 | Decoder | GRU (2 layers, hidden=768) | 50 | Loss 1.21 |
 
-**End to End Result:** 10% token accuracy on Synthetic data and 3% token accuracy on Feynman equations. This can be improved by using a smaller model and by generating eqautions more similar to feynman equations.
+**End to End Result:** 10% token accuracy on Synthetic data and 3% token accuracy on Feynman equations. This can be improved by using a smaller model and by generating equations more similar to feynman equations.
 
 ---
-10% token accuracy on Synthetic data and 3% token accuracy on Feynman equations. This can be improved by using a smaller model and by generating equations more similar to feynman .
 
 ## Project Structure
 
