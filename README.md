@@ -17,11 +17,12 @@ Normalized: (x1 + x2) / x3^2
 Prefix:     DIV ADD x1 x2 POW x3 2
 ```
 ### Synthetic Data Generation
-Generated **50,000 synthetic expressions** to supplement the original 100 Feynman equations.
-Operator weights were derived from scanning the Feynman dataset. Filtering was applied to remove trivial expressions, invalid operations (e.g. division by zero), and redundant forms (e.g. `exp(log(x))`).
+Generated **50,000 synthetic expressions** to supplement the original 100 Feynman equations. 
+Operator weights were derived from scanning the Feynman dataset. 
 
 ### Tokenization Comparison: Prefix vs Infix
-Ran additional experiments to determine which representation is better suited for the model. Trained identical MLM models (Transformer encoder, 3 layers, 4 heads, d_model=128) on the 100 Feynman equations using two tokenization strategies:
+Ran additional experiments to determine which representation is better suited for the model. 
+Trained identical MLM models (Transformer encoder, 3 layers, 4 heads, d_model=128) on the 100 Feynman equations using two tokenization strategies:
 
 | Representation | Vocab Size | Val Accuracy (MLM) |
 |----------------|------------|--------------------|
@@ -29,8 +30,8 @@ Ran additional experiments to determine which representation is better suited fo
 | Infix (`FUNC_exp LPAREN OP_- VAR_theta OP_^ NUM ...`) | 109 | 38% |
 
 Prefix notation was chosen as the primary representation because:
-- **Smaller, fixed vocabulary** (25 vs 109 tokens) — anonymous variables (`VAR_1`, `VAR_2`) instead of named (`VAR_theta`, `VAR_m_0`), so the model learns pure equation structure
-- **No parentheses needed** — operator-operand relationships are unambiguous from position alone, eliminating tokens that inflate accuracy without contributing structural understanding
+- **Smaller, fixed vocabulary** (25 vs 109 tokens) 
+- **No parentheses needed** — operator-operand relationships are unambiguous from position alone
 - **Higher MLM accuracy** on meaningful tokens, confirming the model captures equation patterns more effectively with prefix notation
 
 ---
