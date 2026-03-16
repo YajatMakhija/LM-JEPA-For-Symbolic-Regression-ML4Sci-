@@ -41,7 +41,7 @@ Trained the context encoder, predictor, and target encoder together on 500 sampl
 | Component | Epochs | Final Loss |
 |-----------|--------|------------|
 | Encoder + Predictor (MSE) | 100 | 0.11 |
-| Decoder | 400 | 0.20 (94.5% train acc) |
+| Decoder | 120 | 0.20 (94.5% train acc) |
 **Result:** 49% exact match accuracy on Feynman equations.
 ### Approach 2 — Modular Training
 Each component trained independently for better control (Trained on 50k Synthetic equations):
