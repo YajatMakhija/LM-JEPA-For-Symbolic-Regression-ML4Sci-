@@ -47,7 +47,7 @@ Trained the context encoder, predictor, and target encoder together on 500 sampl
 Each component trained independently for better control (Trained on 50k Synthetic equations):
 | Component | Method | Epochs | Result |
 |-----------|--------|--------|--------|
-| Target Encoder | Masked LM (15–20% masking) | 30 | Loss 1.87, 28% token acc on Feynman |
+| Target Encoder | Masked LM (15–20% masking) | 30 | 28% token acc on Feynman |
 | Context Encoder | Transformer (4 heads, 2 layers, dim=128) | 20 | Cosine sim 0.047, MSE 0.02 |
 | Decoder | Transformer  | 50 | Accuracy 80% |
 
