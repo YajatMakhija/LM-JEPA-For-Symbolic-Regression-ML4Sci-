@@ -49,7 +49,7 @@ Each component trained independently for better control (Trained on 50k Syntheti
 |-----------|--------|--------|--------|
 | Target Encoder | Masked LM (15–20% masking) | 30 | 28% token acc on Feynman |
 | Context Encoder | Transformer (4 heads, 2 layers, dim=128) | 20 | Cosine sim 0.047, MSE 0.02 |
-| Decoder | Transformer  | 50 | Accuracy 80% |
+| Decoder | Transformer  | 50 | Accuracy 76% |
 
 
 
