@@ -1,7 +1,7 @@
 # LM JEPA For Symbolic Regression ML4Sci Yajat Makhija
 A reduced-size LM-JEPA (Latent Masking Joint Embedding Predictive Architecture) approach to symbolic regression, developed as part of the ML4Sci evaluation tasks.
 
-**Evaluation tasks completed:** Common Task 1.1 · Specific Task 2.7
+**Evaluation tasks completed:** Common Task 1.1 · Specific Task 2.6 · Specific Task 2.7 
 ---
 ## Data Preprocessing (Task 1.1)
 Structured pipeline to convert raw equations from `FeynmanEquations.csv` into a model-ready tokenized format.
@@ -35,6 +35,24 @@ Prefix notation was chosen as the primary representation because:
 - **Higher MLM accuracy** on meaningful tokens, confirming the model captures equation patterns more effectively with prefix notation
 
 ---
+
+## Next-Gen Transformer For Symbolic Regression (Task 2.6)
+
+Built an end-to-end transformer pipeline for symbolic regression using DeepSets encoder with NeSymReS-inspired statistical features (slopes, curvature, FFT frequencies, correlations) and a grammar-constrained decoder following Lample & Charton (2019). The vocabulary and operator arities are inferred automatically from data by trial-parsing expressions. During beam search, a grammar mask enforces valid prefix structure at every step. Constant placeholders (`<C_0>`, `<C_1>`) are optimized post-decoding via L-BFGS-B. The model introduces **residual symbolic regression** — instead of predicting the full equation in one shot, it iteratively predicts simple sub-expressions from residual data.
+ 
+Trained on ~43k synthetic equations, T4 GPU, mixed precision.
+ 
+| Config | Value |
+|--------|-------|
+| Encoder | DeepSets + 31 statistical features |
+| Decoder | 6-layer Transformer, 8 heads, d_model=256 |
+| Parameters | ~4.8M |
+| Train Accuracy | 38.4% |
+| Val Accuracy | 32.3% |
+
+
+
+
 ## LM-JEPA Pretraining (Task 2.7)
 ### Approach 1 — Joint Training
 Trained the context encoder, predictor, and target encoder together on 500 sampled data points per equation (Trained on AI Feynman dataset).
